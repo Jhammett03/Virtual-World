@@ -1,0 +1,35 @@
+World Event: Portals!
+
+The portal entity is a new type of environmental entity which makes the other Moving entities like the Dude and Fairy
+teleport to another linked portal
+
+HOW IT WORKS:
+The portal entity uses a mouseclicked operator to place a portal in a desired location in the virtual world
+If only one portal is placed, the teleportation destination will be the same location as the portal, however for every
+portal placed after that the portal is linked to the previous portal.
+
+For Example:
+portal1 -> portal1 (if only one portal exists)
+
+portal2 -> portal1 and
+portal1 -> portal2 (if 2 exist)
+
+portal3 -> portal2
+portal2 -> portal3
+portal1 -> portal2 (for 3)
+
+etc...
+
+HOW DOES THIS AFFECT THE OTHER ENTITIES?
+The portals affect the moving entities by teleporting them to a different section of the world. They do not impact the
+functionality of the other entities, but if their pathing happens to direct them through a portal, then they will get
+thrown off their path and need to restart their pathing.
+
+
+New Moving Entity: Zombies
+placing portals will allow zombies to pass into the virtual world from the other side, one zombie will appear whenever a
+portal is placed
+
+FUNCTIONALITY:
+Zombies path to the dudes and attempt to eat them, if a zombie is within range of a dude then he will kill him and find
+a new target
